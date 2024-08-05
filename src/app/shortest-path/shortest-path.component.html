@@ -1,0 +1,16 @@
+<div>
+    <h1>Find Shortest Path</h1>
+    <form (ngSubmit)="findPath()">
+      <label for="source">Source:</label>
+      <input type="text" id="source" [(ngModel)]="source" name="source" required>
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination" [(ngModel)]="destination" name="destination" required>
+      <button type="submit">Find Path</button>
+    </form>
+    <div *ngIf="route">
+      <h2>Shortest Path</h2>
+      <p>Distance: {{ route.totalDistance }} light years</p>
+      <p>Path: {{ route.path.join(' -> ') }}</p>
+    </div>
+  </div>
+  
